@@ -82,7 +82,7 @@ async def cambiar_contrasena(contra_actual, nueva_contra, usuario: dict = Depend
                             detail="La contraseña nueva no puede ser igual a la actual")
     else:
         actualizacion = Act_form(campo = "password", act= Autenticacion.encriptar_contra(nueva_contra))
-        Basededatos.acualizar_campo(usuario.id, actualizacion)
+        Basededatos.acualizar_campo(usuario["id"], actualizacion)
 
 
 #---------------------- Recursos Humanos ----------------------
