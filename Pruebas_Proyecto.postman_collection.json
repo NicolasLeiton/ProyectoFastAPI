@@ -1,0 +1,3074 @@
+{
+	"info": {
+		"_postman_id": "38ed6c38-c3b3-42b3-ad5f-c746d9b9534d",
+		"name": "Pruebas_Proyecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34874567"
+	},
+	"item": [
+		{
+			"name": "Loggearse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin@mail",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/login",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login incorrecto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "leiton1020@gmail.co",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/login",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:05:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d5b86cdfd8dcc-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer"
+						},
+						{
+							"key": "rndr-id",
+							"value": "5ee51293-8749-4dae"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Correo o contraseña incorrectos\"\n}"
+				},
+				{
+					"name": "Login Correcto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin@mail",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/login",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:05:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db5b2edcda68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "098a9cbf-93a2-42c9"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjM5YTZiZjllODA1NmM1MDI4M2VkMjgiLCJleHAiOjE3MTU1NTMzMjR9.1c6gS32viHs6-XIBUdE5Zfua25I677th44hOFhNDgl0\",\n    \"token_type\": \"bearer\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener mi info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/me",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Info user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:30:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d82568c0f9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "398c8e5e-6b61-4a33"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6639a6bf9e8056c50283ed28\",\n    \"email\": \"admin@mail\",\n    \"nombres\": \"admin\",\n    \"apellidos\": \"istrador\",\n    \"telefono\": 30488495,\n    \"puesto\": \"Administrador\",\n    \"salario\": 12185400,\n    \"permiso_modificar\": true\n}"
+				},
+				{
+					"name": "Token invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:05:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db6883f7ca68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Bearer"
+						},
+						{
+							"key": "rndr-id",
+							"value": "6e099778-bcdb-441f"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No se pueden verificar las credenciales\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Ver mis desprendibles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/me/desprendibles/",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"me",
+						"desprendibles",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ver mis desprendibles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/desprendibles/",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"desprendibles",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:34:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d88ba2fc89add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "aee3e5bd-f3ed-497c"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"0\": {\n        \"_id\": \"664029a8ab3f300bb0eb6f89\",\n        \"id_usuario\": \"6639a6bf9e8056c50283ed28\",\n        \"fecha_pago\": \"2024-05-11\"\n    },\n    \"1\": {\n        \"_id\": \"664103a0a3f993227b4dc8fd\",\n        \"id_usuario\": \"6639a6bf9e8056c50283ed28\",\n        \"fecha_pago\": \"2024-05-12\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Ver desprendible especifico",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/me/desprendibles/:id",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"me",
+						"desprendibles",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "664103a0a3f993227b4dc8fd"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ID de desprendible erroneo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/desprendibles/:id",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"desprendibles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "WF"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:36:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d8b620c779add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "bde77eee-92d0-4792"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No se ha encontrado el desprendible solicitado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar mi info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"campo\": \"telefono\",\r\n  \"act\": \"30488495\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/me/actualizarinfo",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"me",
+						"actualizarinfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Campo invalido",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"campo\": \"teladwefono\",\r\n  \"act\": \"30488495\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/actualizarinfo",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"actualizarinfo"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:39:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d8f406ba09add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "21f99454-c8cd-4741"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No existe, o no se puede modificar este campo\"\n}"
+				},
+				{
+					"name": "Campo Actualizado",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"campo\": \"telefono\",\r\n  \"act\": \"30488495\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/actualizarinfo",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"actualizarinfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:39:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9021c8869add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "8fb83b2a-b3a3-4f51"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Campo actualizado correctamente\""
+				}
+			]
+		},
+		{
+			"name": "Buscar empleado por correo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/empleado/?empmail=carlos2004@examplemail",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						"empleado",
+						""
+					],
+					"query": [
+						{
+							"key": "empmail",
+							"value": "carlos2004@examplemail"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Usuario sin permisos (Aplica a todos los siguientes)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/empleado/?empmail=carlos2004@examplemail",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"empleado",
+								""
+							],
+							"query": [
+								{
+									"key": "empmail",
+									"value": "carlos2004@examplemail"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:09:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882dbbc89dada68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "c361840a-c37e-40e8"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No tienes permiso para realizar esta accion\"\n}"
+				},
+				{
+					"name": "Empleado Encontrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/empleado/?empmail=carlos2004@examplemail",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"empleado",
+								""
+							],
+							"query": [
+								{
+									"key": "empmail",
+									"value": "carlos2004@examplemail"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:43:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d963f3bd49add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "8e00910a-f3c8-44f7"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6639b0643118a871eb6d3ed4\",\n    \"email\": \"carlos2004@examplemail\",\n    \"nombres\": \"Carlos Antonio\",\n    \"apellidos\": \"Rodriguez Garcia\",\n    \"telefono\": 3001111410,\n    \"puesto\": \"Recursos Humanos\",\n    \"salario\": 2100.5,\n    \"permiso_modificar\": true\n}"
+				},
+				{
+					"name": "Empleado no encontrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/empleado/?empmail=carlos2004@example",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"empleado",
+								""
+							],
+							"query": [
+								{
+									"key": "empmail",
+									"value": "carlos2004@example"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d96dfbdad9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "a3b8658f-43f8-4fab"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Error el usuario no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Buscar empleado por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						":emp_id"
+					],
+					"variable": [
+						{
+							"key": "emp_id",
+							"value": "6639b0643118a871eb6d3ed4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Empleado Encontrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:44:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d97728d919add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "8b9f65e9-ec9c-4407"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6639b0643118a871eb6d3ed4\",\n    \"email\": \"carlos2004@examplemail\",\n    \"nombres\": \"Carlos Antonio\",\n    \"apellidos\": \"Rodriguez Garcia\",\n    \"telefono\": 3001111410,\n    \"puesto\": \"Recursos Humanos\",\n    \"salario\": 2100.5,\n    \"permiso_modificar\": true\n}"
+				},
+				{
+					"name": "Empleado inexistente",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:45:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9824487e9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "c6a9ae88-b33d-4dc2"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Error el usuario no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Contratar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n    \"email\": \"joseantonio1970@hotmail.example\",\n    \"nombres\": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": 601416729,\n    \"puesto\": \"Contador\",\n    \"salario\": 5222000.2,\n    \"permiso_modificar\": \"False\",\n    \"password\": \"ClaudioNieto\"\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/contratar",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						"contratar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Falta de parametros",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n    \"wads\": \"joseantonio1970@hotmail.example\",\n    \"ads \": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": 601416729\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/contratar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"contratar"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:40:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9193dc529add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f1ed9dd6-f840-432e"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"email\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"wads\": \"joseantonio1970@hotmail.example\",\n                \"ads \": \"Jose Antonio\",\n                \"apellidos\": \"Sanchez Martinez\",\n                \"telefono\": 601416729\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"nombres\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"wads\": \"joseantonio1970@hotmail.example\",\n                \"ads \": \"Jose Antonio\",\n                \"apellidos\": \"Sanchez Martinez\",\n                \"telefono\": 601416729\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"puesto\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"wads\": \"joseantonio1970@hotmail.example\",\n                \"ads \": \"Jose Antonio\",\n                \"apellidos\": \"Sanchez Martinez\",\n                \"telefono\": 601416729\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"salario\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"wads\": \"joseantonio1970@hotmail.example\",\n                \"ads \": \"Jose Antonio\",\n                \"apellidos\": \"Sanchez Martinez\",\n                \"telefono\": 601416729\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"password\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"wads\": \"joseantonio1970@hotmail.example\",\n                \"ads \": \"Jose Antonio\",\n                \"apellidos\": \"Sanchez Martinez\",\n                \"telefono\": 601416729\n            }\n        }\n    ]\n}"
+				},
+				{
+					"name": "Tipos de dato incorrectos",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n    \"email\": \"joseantonio1970@hotmail.example\",\n    \"nombres\": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": \"No me lo se\",\n    \"puesto\": \"Contador\",\n    \"salario\": \"MUCHODINERO\",\n    \"password\": \"ClaudioNieto\"\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/contratar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"contratar"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:42:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d94395cfa9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f9fbf63f-3cae-465b"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"int_parsing\",\n            \"loc\": [\n                \"body\",\n                \"telefono\"\n            ],\n            \"msg\": \"Input should be a valid integer, unable to parse string as an integer\",\n            \"input\": \"No me lo se\"\n        },\n        {\n            \"type\": \"float_parsing\",\n            \"loc\": [\n                \"body\",\n                \"salario\"\n            ],\n            \"msg\": \"Input should be a valid number, unable to parse string as a number\",\n            \"input\": \"MUCHODINERO\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Contratacion Efectiva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n    \"email\": \"joseantonio1970@hotmail.example\",\n    \"nombres\": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": 601416729,\n    \"puesto\": \"Contador\",\n    \"salario\": 5222000.2,\n    \"permiso_modificar\": \"False\",\n    \"password\": \"ClaudioNieto\"\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/contratar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"contratar"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:43:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d95166db69add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f6f0ce3b-eb96-40ce"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"664137ec31be6ea373e4ec61\",\n    \"email\": \"joseantonio1970@hotmail.example\",\n    \"nombres\": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": 601416729,\n    \"puesto\": \"Contador\",\n    \"salario\": 5222000.2,\n    \"permiso_modificar\": false\n}"
+				},
+				{
+					"name": "Correo ya utilizado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n    \"email\": \"joseantonio1970@hotmail.example\",\n    \"nombres\": \"Jose Antonio\",\n    \"apellidos\": \"Sanchez Martinez\",\n    \"telefono\": 601416729,\n    \"puesto\": \"Contador\",\n    \"salario\": 5222000.2,\n    \"permiso_modificar\": \"False\",\n    \"password\": \"ClaudioNieto\"\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/contratar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"contratar"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:07:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db9293b89a68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "e0b4fc3b-1461-4e85"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Bad Request\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar info empleado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n  \"email\": \"carlos2004@examplemail\",\n  \"nombres\": \"Carlos Antonio\",\n  \"apellidos\": \"Rodriguez Garcia\",\n  \"telefono\": 3001111410,\n  \"puesto\": \"Recursos Humanos\",\n  \"salario\": 3305000.5,\n  \"permiso_modificar\": false\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						":emp_id",
+						"actualizar"
+					],
+					"variable": [
+						{
+							"key": "emp_id",
+							"value": "6639b0643118a871eb6d3ed4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizacion Correcta",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"email\": \"carlos2004@examplemail\",\n  \"nombres\": \"Carlos Antonio\",\n  \"apellidos\": \"Rodriguez Garcia\",\n  \"telefono\": 3001111410,\n  \"puesto\": \"Recursos Humanos\",\n  \"salario\": 3305000.5,\n  \"permiso_modificar\": false\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:46:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9a8aaeac9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "92c89a55-0f3b-4357"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Informacion del empleado actualizada correctamente\""
+				},
+				{
+					"name": "Id incorrecto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"email\": \"carlos2004@examplemail\",\n  \"nombres\": \"Carlos Antonio\",\n  \"apellidos\": \"Rodriguez Garcia\",\n  \"telefono\": 3001111410,\n  \"puesto\": \"Recursos Humanos\",\n  \"salario\": 3305000.5,\n  \"permiso_modificar\": false\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:47:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9b328d939add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "f5f0e1a7-1fb8-4cdc"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Error: El empleado no existe\"\n}"
+				},
+				{
+					"name": "Informacion Invalida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n  \"email\": \"carlos2004@examplemail\",\n  \"nombres\": \"Carlos Antonio\",\n \n  \"salario\": \"Sin salario\",\n  \"permiso_modificar\": false\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:47:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9c22db449add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "03f443ca-0715-4b31"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": [\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"apellidos\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"email\": \"carlos2004@examplemail\",\n                \"nombres\": \"Carlos Antonio\",\n                \"salario\": \"Sin salario\",\n                \"permiso_modificar\": false\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"telefono\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"email\": \"carlos2004@examplemail\",\n                \"nombres\": \"Carlos Antonio\",\n                \"salario\": \"Sin salario\",\n                \"permiso_modificar\": false\n            }\n        },\n        {\n            \"type\": \"missing\",\n            \"loc\": [\n                \"body\",\n                \"puesto\"\n            ],\n            \"msg\": \"Field required\",\n            \"input\": {\n                \"email\": \"carlos2004@examplemail\",\n                \"nombres\": \"Carlos Antonio\",\n                \"salario\": \"Sin salario\",\n                \"permiso_modificar\": false\n            }\n        },\n        {\n            \"type\": \"float_parsing\",\n            \"loc\": [\n                \"body\",\n                \"salario\"\n            ],\n            \"msg\": \"Input should be a valid number, unable to parse string as a number\",\n            \"input\": \"Sin salario\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar campo empleado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"campo\": \"telefono\",\n  \"act\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						":emp_id",
+						"actualizar"
+					],
+					"variable": [
+						{
+							"key": "emp_id",
+							"value": "6639b0643118a871eb6d3ed4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizacion Correcta",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"campo\": \"permiso_modificar\",\n  \"act\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:48:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9d4eaa7d9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "2baa4005-ac32-4f8c"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Campo actualizado correctamente\""
+				},
+				{
+					"name": "Campo invalido",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"campo\": \"password\",\n  \"act\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:49:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9e0988799add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "9e39b22c-9064-4200"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"No existe, o no se puede modificar este campo\"\n}"
+				},
+				{
+					"name": "Tipo de dato incorrecto",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"campo\": \"telefono\",\n  \"act\": \"ninguno\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/actualizar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"actualizar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b0643118a871eb6d3ed4"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:50:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d9f4f886b9add-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "2efb0ee6-b0b2-497d"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Error: El tipo de dato no coincide\"\n}"
+				}
+			]
+		},
+		{
+			"name": "QuitarEmpleado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/eliminar",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						":emp_id",
+						"eliminar"
+					],
+					"variable": [
+						{
+							"key": "emp_id",
+							"value": "6639b2ccbe589c3ff2ebe0a9"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminacion Correcta",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/eliminar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"eliminar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b2ccbe589c3ff2ebe0a9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 20:23:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d20338d70d9d5-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "70a3ee6f-bb0a-4c04"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Empleado eliminado correctamente\""
+				},
+				{
+					"name": "ID invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/eliminar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"eliminar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:04:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db3cab974a68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "99db0d11-3c90-4003"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El usuario no existe en la base de datos\"\n}"
+				}
+			]
+		},
+		{
+			"name": "QuitarEmpleado Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/hr/delempleado/?empmail=joseantonio1970@qwe.example",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"hr",
+						"delempleado",
+						""
+					],
+					"query": [
+						{
+							"key": "empmail",
+							"value": "joseantonio1970@qwe.example"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "QuitarEmpleado",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/:emp_id/eliminar",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								":emp_id",
+								"eliminar"
+							],
+							"variable": [
+								{
+									"key": "emp_id",
+									"value": "6639b2ccbe589c3ff2ebe0a9"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 20:23:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d20338d70d9d5-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "70a3ee6f-bb0a-4c04"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Empleado eliminado correctamente\""
+				},
+				{
+					"name": "Email invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/hr/delempleado/?empmail=awd",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"hr",
+								"delempleado",
+								""
+							],
+							"query": [
+								{
+									"key": "empmail",
+									"value": "awd"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:04:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db4d3cbc5a68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "2de045a5-c624-433b"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"El usuario no existe en la base de datos\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Enviar emails a todos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/testmails",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"testmails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar Contrasena",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{mytoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://proyectofastapi-gwku.onrender.com/me/cambiar_contrasena/?contra_actual=admin1232&nueva_contra=admin123",
+					"protocol": "https",
+					"host": [
+						"proyectofastapi-gwku",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"me",
+						"cambiar_contrasena",
+						""
+					],
+					"query": [
+						{
+							"key": "contra_actual",
+							"value": "admin1232"
+						},
+						{
+							"key": "nueva_contra",
+							"value": "admin123"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Contrasena erronea",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/cambiar_contrasena/?contra_actual=admin123&nueva_contra=admin123",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"cambiar_contrasena",
+								""
+							],
+							"query": [
+								{
+									"key": "contra_actual",
+									"value": "admin123"
+								},
+								{
+									"key": "nueva_contra",
+									"value": "admin123"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:18:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d70ea3d658dcc-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "69bac499-a115-4f95"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"La contraseña actual es incorrecta\"\n}"
+				},
+				{
+					"name": "Contrasenas iguales",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/cambiar_contrasena/?contra_actual=admin123&nueva_contra=admin123",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"cambiar_contrasena",
+								""
+							],
+							"query": [
+								{
+									"key": "contra_actual",
+									"value": "admin123"
+								},
+								{
+									"key": "nueva_contra",
+									"value": "admin123"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 21:19:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882d71d02c528dcc-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "656c3731-c714-4fc4"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"La contraseña nueva no puede ser igual a la actual\"\n}"
+				},
+				{
+					"name": "Cambio Efectivo",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://proyectofastapi-gwku.onrender.com/me/cambiar_contrasena/?contra_actual=admin1232&nueva_contra=admin123",
+							"protocol": "https",
+							"host": [
+								"proyectofastapi-gwku",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"me",
+								"cambiar_contrasena",
+								""
+							],
+							"query": [
+								{
+									"key": "contra_actual",
+									"value": "admin1232"
+								},
+								{
+									"key": "nueva_contra",
+									"value": "admin123"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 22:03:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "882db315d84fa68c-MIA"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "07edb570-3c2b-4ddd"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "\"Contraseña actualizada correctamente\""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjM5YTZiZjllODA1NmM1MDI4M2VkMjgiLCJleHAiOjE3MTU1Mzg3MjF9.uROsLdLsY-CgTy4zWNCy1nVIWBspmOIMhO87Hk7yOoo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "mytoken",
+			"value": "adw",
+			"type": "string"
+		}
+	]
+}

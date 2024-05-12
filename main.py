@@ -18,6 +18,11 @@ scheduler.add_job(Correos.correos_masivos, 'cron', hour=23, minute=00) #Hora Col
 scheduler.start()
 
 #---------------------- Autenticacion en la API ----------------------
+@app.get("/")
+async def inicio():
+    return "Hola bienvenido. Para registrarte ingresa a /login"
+
+
 @app.post("/login")
 async def loggearse(formulario: OAuth2PasswordRequestForm = Depends()) -> Token:
     user = Autenticacion.autenticar_usuario(formulario.username, formulario.password)
@@ -82,7 +87,12 @@ async def cambiar_contrasena(contra_actual, nueva_contra, usuario: dict = Depend
                             detail="La contraseña nueva no puede ser igual a la actual")
     else:
         actualizacion = Act_form(campo = "password", act= Autenticacion.encriptar_contra(nueva_contra))
-        Basededatos.acualizar_campo(usuario["id"], actualizacion)
+        respuesta = Basededatos.acualizar_campo(usuario["id"], actualizacion)
+        if respuesta == True:
+            return "Contraseña actualizada correctamente"
+        else:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
+                                detail=respuesta)
 
 
 #---------------------- Recursos Humanos ----------------------
@@ -151,7 +161,7 @@ async def eliminar_empleado(emp_id:str, permiso: bool = Depends(Autenticacion.ve
 
 #Borrar de la base de datos a un usuario (Pasando su correo)
 @app.delete("/hr/delempleado/")
-async def eliminar_empleado(empmail:str, permiso: bool = Depends(Autenticacion.verificar_permiso)):
+async def eliminar_empleado_email(empmail:str, permiso: bool = Depends(Autenticacion.verificar_permiso)):
     if Basededatos.borrar_empleado(empmail) == False:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail="El usuario no existe en la base de datos")

@@ -130,15 +130,17 @@ def acualizar_campo(id:str, actualizacion:Act_form):
 #---------------------- DELETE ----------------------
 def borrar_empleado(email: str  = None, id: str = None) -> bool:
         #Recibe o el email o el id
-        if id!= None:
-            encontrado = db_client.CompanyDB.empleados.find_one_and_delete({"_id":ObjectId(id)})
-        elif email != None:
-            encontrado = db_client.CompanyDB.empleados.find_one_and_delete({"email": email})
-        else:
+        try:
+            if id!= None:
+                encontrado = db_client.CompanyDB.empleados.find_one_and_delete({"_id":ObjectId(id)})
+            elif email != None:
+                encontrado = db_client.CompanyDB.empleados.find_one_and_delete({"email": email})
+            else:
+                return False
+        except:
             return False
-
         if not encontrado:
             return False
-        
+            
         return True
 
