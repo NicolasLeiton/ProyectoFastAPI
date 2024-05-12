@@ -10,7 +10,7 @@ from Componentes import Basededatos
 
 ALGORITMO = "HS256"
 LLAVE = "E847771A47DD909B0389ACF07382509C"
-TOKEN_MINUTOS_EXPIRACION = 15
+TOKEN_MINUTOS_EXPIRACION = 30
 
 crypth = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2 = OAuth2PasswordBearer(tokenUrl="login")
@@ -54,11 +54,13 @@ async def verificar_token(token: str = Depends(oauth2)):
     return Basededatos.buscar_id(id)
 
 async def verificar_permiso(usuario: dict = Depends(verificar_token)):
-    permiso = usuario.get("permiso_modificar")
-    if permiso == True:
-        raise HTTPException(status_code=401,
+    error=HTTPException(status_code=401,
                             detail="No tienes permiso para realizar esta accion")
-    else:
+  
+    permiso = usuario["permiso_modificar"]
+    if permiso == True:
         return True
+    else:
+        raise error
 
 

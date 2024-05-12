@@ -3,10 +3,14 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 from os import getcwd
-from datetime import date, datetime
+from datetime import date, datetime, timezone, timedelta
 # from Componentes.Soporte.EsquemasBM import Token
 from Componentes import Basededatos
 
+
+def fecha_colombia():
+    hora = (datetime.now(timezone.utc)) - timedelta(hours=5)
+    return hora
 
 def formato_num(numero) -> str:
 #Funcion que devuelve un numero con comilla de millones, punto de miles, y coma decimal
@@ -73,8 +77,8 @@ def insertar_desprendible(id:str) -> bool:
         "id_usuario": usuario["id"],
         "salario_pagado": usuario["salario"],
         "correo_enviado": usuario["email"],
-        "fecha_pago": str(date.today()),
-        "hora_pago": (datetime.now()).strftime("%I:%M %p")
+        "fecha_pago": fecha_colombia().strftime("%Y-%m-%d"),
+        "hora_pago": fecha_colombia().strftime("%I:%M %p")
     }
     return Basededatos.guardar_desprendible(desprendible)
 

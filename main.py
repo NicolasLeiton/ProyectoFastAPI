@@ -12,10 +12,9 @@ from Componentes import Correos
 
 app = FastAPI()
 #documentacion swagger en /docs
-
 #---------------------- Programar envio de correos ----------------------
 scheduler = BackgroundScheduler()
-scheduler.add_job(Correos.correos_masivos, 'cron', hour=18, minute=00)
+scheduler.add_job(Correos.correos_masivos, 'cron', hour=23, minute=00) #Hora Colombia UTC-5
 scheduler.start()
 
 #---------------------- Autenticacion en la API ----------------------
@@ -162,11 +161,8 @@ async def eliminar_empleado(empmail:str, permiso: bool = Depends(Autenticacion.v
 #---------------------- Prueba Correos ----------------------
 
 @app.post("/testmails")
-async def probar_envio_mails(email:str, permiso: bool = Depends(Autenticacion.verificar_permiso)):
-    if email == "all":
-        if Correos.correos_masivos()== False:
-            raise HTTPException(status_code=status.HTTP_424_FAILED_DEPENDENCY)
-    else:
-        if Correos.enviar_correo(email) == False:
-            raise HTTPException(status_code=status.HTTP_424_FAILED_DEPENDENCY)
-    return "Correo(s) enviados"
+async def probar_envio_mails(permiso: bool = Depends(Autenticacion.verificar_permiso)):
+    if Correos.correos_masivos()== False:
+        raise HTTPException(status_code=status.HTTP_424_FAILED_DEPENDENCY)
+    
+    return "Correos enviados"
